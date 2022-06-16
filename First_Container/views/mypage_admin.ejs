@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="kr"> <!-- kr -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <link rel="stylesheet" href="stylesheets/vendor.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+
+    <title>기빙트리 관리</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/javascripts/loginHeader.js"></script>
+	
+	  
+	<script>
+		$(document).ready(function() {
+			var loginStatus = localStorage.getItem('status');
+			loginHeader(loginStatus);
+		});
+	</script>
+  </head>
+  <body>
+
+
+    <!-- header -->
+   <header class="header header-dark header-sticky separator-bottom">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="/" class="navbar-brand order-1 order-lg-2"><img src="images/givingtree_logo.svg" style="width:120px;" alt="Logo"></a>
+            <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-3 order-lg-1" id="navbarMenu">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>	  
+              </ul>
+            </div>
+
+          <!--로그인 하고 난 후 상태바-->
+            <div class="collapse navbar-collapse order-5 order-lg-3" id="navbarMenu2">
+              <ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+                  <a id ="before_login" class="nav-link logingroup" href="/login">로그인</a>
+                  <a id ="after_login" class="nav-link logingroup" href="/login">로그아웃</a>
+                </li>
+				<li class="nav-item">
+                  <a id= "after_login_user" class="nav-link logingroup" href="/mypage">나의 기빙트리</a>
+                  <a id="after_login_admin" class="nav-link logingroup" href="/mypage_admin">기빙트리 관리</a>
+                </li>
+              </ul>
+            </div>
+			<!--끝-->
+          </nav>
+        </div>
+      </div>
+    </header>
+
+     <!-- 제목 -->
+    <section style="background-color:#304635">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h1 style="padding-top:50px; color:white">기빙트리 관리</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- 담긴 상품 -->
+	<section class="card">
+		<div class="container">
+            <div class="row">
+				
+				<!-- 예약중-->
+                <div class="col-md">
+					<div class="col-md">
+						<div class="title">
+							<div class="row">
+								<div class="col"><h4><b>예약중</b></h4></div>
+								<div class="col-2 align-self-center text-center text-muted">1 개</div>
+							</div>
+						</div>    
+						<!--  -->
+						<div class="row pt-3">
+							<div class="row main align-items-center">
+								<div class="col-3"><img class="img-fluid" src="/images/KakaoTalk_Image_2022-05-12-08-15-39_028.png"></div>
+								<div class="col">
+									<div class="row text-muted">후드티</div>
+									<div class="row">Cotton T-shirt</div>
+								</div>
+								<!-- 한 상품 가격 -->
+								<div class="price col-md-4 align-items-center">	
+									<div class="row">가격<div class="col">5,000 &#8361;</div></div>
+
+									<div class="row">기부금<div class="col">-1,000 &#8361;</div><span class="close">&#10005;</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 판매중 -->
+					<div class="col-md pt-5">
+						<div class="title">
+							<div class="row">
+								<div class="col"><h4><b>판매중</b></h4></div>
+								<div class="col-2 align-self-center text-center text-muted">1 개</div>
+							</div>
+						</div>
+						<div class="row pt-3">
+							<div class="row main align-items-center">
+								<div class="col-3"><img class="img-fluid" src="/images/KakaoTalk_Image_2022-05-12-08-15-39_029.jpeg"></div>
+								<div class="col">
+									<div class="row text-muted">반팔티</div>
+									<div class="row">Cotton T-shirt</div>
+								</div>
+								<!-- 한 상품 가격 -->
+								<div class="price col-md-4 align-items-center">	
+									<div class="row">가격<div class="col">5,000 &#8361;</div></div>
+
+									<div class="row">기부금<div class="col">-1,000 &#8361;</div><span class="close">&#10005;</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<!-- 판매완료 -->
+					<div class="col-md pt-5">
+						<div class="title">
+							<div class="row">
+								<div class="col"><h4><b>판매완료</b></h4></div>
+								<div class="col-2 align-self-center text-center text-muted">1 개</div>
+							</div>
+						</div>
+						<div class="row pt-3">
+							<div class="row main align-items-center">
+								<div class="col-3"><img class="img-fluid" src="/images/KakaoTalk_Image_2022-05-12-08-15-29_001.jpeg"></div>
+								<div class="col">
+									<div class="row text-muted">향수</div>
+									<div class="row">Cotton T-shirt</div>
+								</div>
+								<!-- 한 상품 가격 -->
+								<div class="price col-md-4 align-items-right">	
+									<div class="row">가격<div class="col">5,000 &#8361;</div></div>
+
+									<div class="row">기부금<div class="col">-1,000 &#8361;</div><span class="close">&#10005;</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<!-- 구매내역 -->
+					<div class="col-md pt-3">
+						<div class="title">
+							<div class="row">
+								<div class="col"><h4><b>구매내역</b></h4></div>
+								<div class="col-2 align-self-center text-center text-muted">1 개</div>
+							</div>
+						</div>
+						<div class="row pt-3">
+							<div class="row main align-items-center">
+								<div class="col-3"><img class="img-fluid" src="/images/KakaoTalk_Image_2022-05-12-08-15-39_029.jpeg"></div>
+								<div class="col">
+									<div class="row text-muted">티셔츠 </div>
+									<div class="row">Cotton T-shirt</div>
+								</div>
+								<!-- 한 상품 가격 -->
+								<div class="price col-md-4 align-items-center">	
+									<div class="row">가격<div class="col">5,000 &#8361;</div></div>
+
+									<div class="row">기부금<div class="col">-1,000 &#8361;</div><span class="close">&#10005;</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+		</div>        
+    </section>
+
+
+<!-- footer -->
+    <footer class="bg-dark text-white py-0">
+      <div class="container">
+        <div class="row separated">
+		  <!-- 왼쪽 칼럼 -->
+          <div class="col-lg-6 py-10">
+            <div class="row">
+              <div class="col-md-8">
+                <p>Thank you for visiting <a class="underline">The Giving Tree.</a><br>
+					The more you share, the richer your life. </p>
+              </div>
+            </div>
+			<!--퀵링크 박스-->
+            <div class="row">
+              <div class="col-md-10">
+                <h4 class="eyebrow mb-2">Quick Links</h4>
+                <ul class="list-group list-group-columns">
+                  <li class="list-group-item"><a href="about.html">About</a></li>
+                  <li class="list-group-item"><a href="contact.html">Contact Us</a></li>
+                  <li class="list-group-item"><a href="faq.html">FAQ</a></li>
+                  <li class="list-group-item"><a href="blog.html">Blog</a></li>
+                  <li class="list-group-item"><a href="text.html">Terms of Use</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+		  <!-- 오른쪽 칼럼 -->
+          <div class="col-lg-6 py-10">
+			<!-- 구독하기 : Subscribe -->
+            <div class="row justify-content-end">
+              <div class="col-lg-10">
+                <h4 class="eyebrow mb-2">Subscribe</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Subscribe" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-white" type="button" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+			<!-- 구독하기 : FOLLOW US -->
+            <div class="row justify-content-end">
+              <div class="col-lg-10">
+                <h4 class="eyebrow mb-2">Follow us</h4>
+                <nav class="nav nav-icons">
+                  <a class="nav-link" href="#!"><i class="icon-facebook-o"></i></a>
+                  <a class="nav-link" href="#!"><i class="icon-twitter-o"></i></a>
+                  <a class="nav-link" href="#!"><i class="icon-youtube-o"></i></a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / footer -->
+
+    <script src="javascripts/vendor.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>
+
